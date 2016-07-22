@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>上下居中问题解决方案</title>
+    <style>
+        div{
+            height:200px;
+            width:200px;
+            border:1px solid #e4393c;
+        }
+        #issue1{
+            line-height: 200px;
+        }
+        #issue2{
+            position: relative;
+        }
+        .img2{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #issue3{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #issue4{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="issue1"></div>
+    <div id="issue2"></div>
+    <div id="issue3"></div>
+    <div id="issue4"></div>
+    <script>
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        var img4 = new Image();
+        img1.src="match_del.png";
+        img1.className="img1";
+        img2.src="match_del.png";
+        img2.className="img2";
+        img3.src="match_del.png";
+        img3.className="img3";
+        img4.src="match_del.png";
+        img4.className="img4";
+        img1.onload=function(){
+            document.getElementById("issue1").appendChild(img1);
+        };
+        img2.onload=function(){
+            document.getElementById("issue2").appendChild(img2);
+        };
+        img3.onload=function(){
+            document.getElementById("issue3").appendChild(img3);
+        };
+        img4.onload=function(){
+            document.getElementById("issue4").appendChild(img4);
+        };
+    </script>
+</body>
+</html>
